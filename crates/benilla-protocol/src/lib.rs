@@ -3,6 +3,7 @@
 
 pub mod auth;
 pub mod events;
+pub mod fusion;
 pub mod guid;
 pub mod messages;
 pub mod wire;

@@ -1559,6 +1559,12 @@ fn parse_server_body(
         opcode::SMSG_ADDON_INFO => ServerPacket::AddonInfo {
             statuses: read_addon_info(&mut r),
         },
+        crate::fusion::SMSG_FUSION_EVENTS => {
+            let events = crate::fusion::decode_events(r)
+                .map_err(|e| io::Error::new(io::ErrorKind::InvalidData, e.to_string()))?;
+            r = &r[r.len()..];
+            ServerPacket::FusionEvents(events)
+        }
         other => ServerPacket::Other { opcode: other },
     };
     *cursor = r;

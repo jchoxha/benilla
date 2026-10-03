@@ -1,0 +1,6 @@
+# Fusion packet test vectors: "name hex" per line. Frozen: both the server (src/fusion/tests)
+# and the client (benilla-protocol) must encode these exact bytes. Change only with kVersion.
+shots_one 010140e2010007000301b3a2f10000000000000028410000a2c10000f041000000000000803f00000000
+shots_empty 0100
+state 010201032a0005
+events_hit_kill 0102000134120000000000002d000000070001023412000000000000000000000700

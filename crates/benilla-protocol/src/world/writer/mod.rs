@@ -71,7 +71,7 @@ pub struct WorldWriter {
 
 impl WorldWriter {
     /// Frame, encrypt and write one packet: the sole write path every verb goes through.
-    fn send(&mut self, opcode: u16, body: &[u8]) -> Result<()> {
+    pub(crate) fn send(&mut self, opcode: u16, body: &[u8]) -> Result<()> {
         let sent = send_packet(&mut self.stream, Some(&mut self.encrypter), opcode, body);
         if sent.is_ok() {
             if let Some(log) = &mut self.sent {

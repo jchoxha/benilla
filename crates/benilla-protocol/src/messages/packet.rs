@@ -1248,6 +1248,8 @@ pub enum ServerPacket {
         /// One status per record, in arrival order.
         statuses: Vec<u8>,
     },
+    /// `SMSG_FUSION_EVENTS` (829, Azeroth Warfare's own): hits, kills and streaks for the HUD.
+    FusionEvents(Vec<crate::fusion::Event>),
     Other {
         opcode: u16,
     },
@@ -1602,6 +1604,7 @@ impl ServerPacket {
             ServerPacket::InitWorldStates(_) => "SMSG_INIT_WORLD_STATES".into(),
             ServerPacket::UpdateWorldState { .. } => "SMSG_UPDATE_WORLD_STATE".into(),
             ServerPacket::AddonInfo { .. } => "SMSG_ADDON_INFO".into(),
+            ServerPacket::FusionEvents(_) => "SMSG_FUSION_EVENTS".into(),
             ServerPacket::Other { opcode } => format!("opcode {opcode:#06x}"),
         }
     }

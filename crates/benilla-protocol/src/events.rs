@@ -110,6 +110,8 @@ impl LoginRefusal {
     derive(Hash, PartialOrd, Ord, strum::EnumIter, strum::IntoStaticStr)
 )]
 pub enum SessionEvent {
+    /// `SMSG_FUSION_EVENTS`: Azeroth Warfare's hits, kills, streaks and ammo resyncs.
+    FusionEvents { events: Vec<crate::fusion::Event> },
     /// A login attempt reached `stage`; emitted by the IO thread, never wire-decoded.
     LoginStage { stage: LoginStage },
     /// The account's realms (`CMD_REALM_LIST`); the IO thread blocks for the app's pick. Re-sent on
