@@ -1053,6 +1053,8 @@ fn writer_loop(
                     ClientCommand::PetRename { pet_guid, name } => w.pet_rename(pet_guid, &name),
                     ClientCommand::AttackSwing { guid } => w.attack_swing(guid),
                     ClientCommand::AttackStop => w.attack_stop(),
+                    ClientCommand::FusionShots { shots } => w.fusion_shots(&shots),
+                    ClientCommand::FusionState { state } => w.fusion_state(&state),
                     ClientCommand::SetSheathed { state } => w.set_sheathed(state),
                     ClientCommand::StandStateChange { state } => w.stand_state_change(state),
                     ClientCommand::MountSpecial => w.mount_special(),

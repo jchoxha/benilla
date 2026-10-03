@@ -55,6 +55,7 @@ mod doodad_events;
 mod entities;
 mod fishing_line;
 mod footprints;
+pub mod fusion;
 mod game_plugins;
 mod glue;
 mod glue_strings;

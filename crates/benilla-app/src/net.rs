@@ -768,6 +768,14 @@ pub(crate) static CAST_TRACE: std::sync::LazyLock<bool> =
 /// A message to the server through the write thread, carrying any pose it needs.
 #[derive(Debug)]
 pub(crate) enum ClientCommand {
+    /// Azeroth Warfare: `CMSG_FUSION_SHOTS`.
+    FusionShots {
+        shots: Vec<benilla_protocol::fusion::Shot>,
+    },
+    /// Azeroth Warfare: `CMSG_FUSION_STATE`.
+    FusionState {
+        state: benilla_protocol::fusion::State,
+    },
     /// A self-movement packet. Each tail is written iff its flag is set (`JUMPING`, `SWIMMING`,
     /// `ON_TRANSPORT`): a flag without its tail desyncs the server's parse.
     Move {

@@ -222,6 +222,7 @@ impl PluginGroup for GamePlugins {
             .add(UiCastPlugin)
             .add(UiMirrorPlugin)
             .add(crate::combat_text::CombatTextPlugin)
+            .add(crate::fusion::FusionPlugin)
             .add(crate::nameplates::NameplatesPlugin)
             .add(crate::raid_marks::RaidMarksPlugin)
             .add(crate::vplates::VPlatesPlugin)
