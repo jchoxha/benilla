@@ -7,7 +7,7 @@ use bevy::prelude::*;
 pub use benilla_protocol::fusion::{
     Event, EventKind, Gait, Shot, Stance, State, EVENT_ASSIST, EVENT_FATAL, EVENT_HEADSHOT,
     MAX_SHOTS_PER_BATCH, SHOT_ADS, SHOT_AIRBORNE, SHOT_CLAIMS_HEAD, STATE_AIMING, STATE_FFA_OFF,
-    STATE_FFA_ON, STATE_RELOADING,
+    STATE_FFA_ON, STATE_REARM, STATE_RELOADING,
 };
 use benilla_protocol::{SessionEvent, SessionEventKind};
 
