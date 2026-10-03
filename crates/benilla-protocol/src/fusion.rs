@@ -27,6 +27,8 @@ pub const STATE_FFA_ON: u8 = 0x02;
 /// Ask for it off (it drops after 5 minutes out of combat).
 pub const STATE_FFA_OFF: u8 = 0x04;
 pub const STATE_RELOADING: u8 = 0x08;
+/// Buy special rounds from the quartermaster; only honoured while resting (a city or an inn).
+pub const STATE_REARM: u8 = 0x10;
 
 pub const EVENT_HEADSHOT: u8 = 0x01;
 pub const EVENT_FATAL: u8 = 0x02;
